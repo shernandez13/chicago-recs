@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      -  name: Build and Deploy to S3
       - name: Checkout repository
         uses: actions/checkout@v4
 
