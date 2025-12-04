@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { RestaurantProvider } from './context/RestaurantContext';
+import Layout from './components/layout/Layout';
+import About from './pages/About';
+import TopRestaurants from './pages/TopRestaurants';
+import RecommendForm from './pages/RecommendForm';
 
+/**
+ * Main application component with routing configuration
+ */
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <RestaurantProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/top-10" element={<TopRestaurants />} />
+            <Route path="/recommend" element={<RecommendForm />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Layout>
+      </RestaurantProvider>
+    </BrowserRouter>
   );
 }
 
