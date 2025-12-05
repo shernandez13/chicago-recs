@@ -1,0 +1,124 @@
+{
+  "restaurants": [
+    {
+      "id": "1",
+      "name": "The Purple Pig",
+      "cuisine": "Mediterranean",
+      "rating": 4.8,
+      "priceRange": "$$-$$$",
+      "description": "A wine bar and restaurant featuring cheese, swine, and wine on Chicago's Magnificent Mile. Known for innovative Mediterranean small plates.",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+      "address": "500 N Michigan Ave, Chicago, IL 60611",
+      "specialties": ["Wine Selection", "Charcuterie", "Small Plates"],
+      "rank": 1
+    },
+    {
+      "id": "2",
+      "name": "Lou Malnati's Pizzeria",
+      "cuisine": "Italian",
+      "rating": 4.7,
+      "priceRange": "$$",
+      "description": "Chicago's legendary deep-dish pizza. A family tradition since 1971, serving authentic Chicago-style pizza with a buttery crust.",
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80",
+      "address": "439 N Wells St, Chicago, IL 60654",
+      "specialties": ["Deep-Dish Pizza", "Italian Sausage", "Mozzarella"],
+      "rank": 2
+    },
+    {
+      "id": "3",
+      "name": "Girl & The Goat",
+      "cuisine": "American",
+      "rating": 4.9,
+      "priceRange": "$$$",
+      "description": "Chef Stephanie Izard's award-winning restaurant serving bold, globally-inspired dishes with local ingredients.",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+      "address": "809 W Randolph St, Chicago, IL 60607",
+      "specialties": ["Goat Dishes", "Creative Plates", "Seasonal Menu"],
+      "rank": 3
+    },
+    {
+      "id": "4",
+      "name": "Alinea",
+      "cuisine": "Contemporary",
+      "rating": 4.9,
+      "priceRange": "$$$$",
+      "description": "Three Michelin-starred restaurant offering innovative, molecular gastronomy and an unforgettable dining experience.",
+      "image": "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=800&q=80",
+      "address": "1723 N Halsted St, Chicago, IL 60614",
+      "specialties": ["Molecular Gastronomy", "Tasting Menu", "Fine Dining"],
+      "rank": 4
+    },
+    {
+      "id": "5",
+      "name": "Portillo's Hot Dogs",
+      "cuisine": "American",
+      "rating": 4.6,
+      "priceRange": "$",
+      "description": "Iconic Chicago-style hot dogs, Italian beef sandwiches, and chocolate cake shakes. A local institution since 1963.",
+      "image": "https://images.unsplash.com/photo-1612392062422-ef19b42f74df?w=800&q=80",
+      "address": "100 W Ontario St, Chicago, IL 60654",
+      "specialties": ["Chicago Hot Dog", "Italian Beef", "Chocolate Cake Shake"],
+      "rank": 5
+    },
+    {
+      "id": "6",
+      "name": "Au Cheval",
+      "cuisine": "Diner",
+      "rating": 4.8,
+      "priceRange": "$$",
+      "description": "Upscale diner known for having one of the best burgers in America. Expect a wait, but it's worth it.",
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80",
+      "address": "800 W Randolph St, Chicago, IL 60607",
+      "specialties": ["Burgers", "Eggs", "Foie Gras"],
+      "rank": 6
+    },
+    {
+      "id": "7",
+      "name": "Gibsons Bar & Steakhouse",
+      "cuisine": "Steakhouse",
+      "rating": 4.7,
+      "priceRange": "$$$-$$$$",
+      "description": "Classic Chicago steakhouse with huge portions, premium steaks, and a legendary bar scene.",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+      "address": "1028 N Rush St, Chicago, IL 60611",
+      "specialties": ["Prime Steaks", "Seafood", "Martinis"],
+      "rank": 7
+    },
+    {
+      "id": "8",
+      "name": "Frontera Grill",
+      "cuisine": "Mexican",
+      "rating": 4.7,
+      "priceRange": "$$-$$$",
+      "description": "Rick Bayless' celebrated Mexican restaurant featuring authentic regional cuisine and creative margaritas.",
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80",
+      "address": "445 N Clark St, Chicago, IL 60654",
+      "specialties": ["Mole", "Tacos", "Margaritas"],
+      "rank": 8
+    },
+    {
+      "id": "9",
+      "name": "The Publican",
+      "cuisine": "European",
+      "rating": 4.6,
+      "priceRange": "$$-$$$",
+      "description": "Beer-focused restaurant with pork-centric menu, fresh oysters, and communal dining experience.",
+      "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80",
+      "address": "837 W Fulton Market, Chicago, IL 60607",
+      "specialties": ["Pork Dishes", "Oysters", "Craft Beer"],
+      "rank": 9
+    },
+    {
+      "id": "10",
+      "name": "Smoque BBQ",
+      "cuisine": "BBQ",
+      "rating": 4.8,
+      "priceRange": "$$",
+      "description": "Award-winning Texas-style barbecue in Chicago. Smoked daily, served until sold out.",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+      "address": "3800 N Pulaski Rd, Chicago, IL 60641",
+      "specialties": ["Brisket", "Pulled Pork", "Ribs"],
+      "rank": 10
+    }
+  ]
+}
