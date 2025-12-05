@@ -27,3 +27,23 @@ const RestaurantList = ({ restaurants, showRank = true }) => {
     </div>
   );
 };
+
+RestaurantList.propTypes = {
+  restaurants: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      cuisine: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+      priceRange: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      address: PropTypes.string.isRequired,
+      specialties: PropTypes.arrayOf(PropTypes.string),
+      rank: PropTypes.number,
+    })
+  ).isRequired,
+  showRank: PropTypes.bool,
+};
+
+export default RestaurantList;
