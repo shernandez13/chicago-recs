@@ -1,0 +1,32 @@
+{
+  "slides": [
+    {
+      "id": "1",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80",
+      "title": "Chicago's Vibrant Food Scene",
+      "description": "Experience the diverse culinary landscape that makes Chicago a world-class food destination",
+      "alt": "Variety of dishes on a restaurant table"
+    },
+    {
+      "id": "2",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
+      "title": "Authentic Local Flavors",
+      "description": "Discover hidden gems where locals dine and authentic Chicago flavors come alive",
+      "alt": "Busy restaurant interior with diners"
+    },
+    {
+      "id": "3",
+      "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80",
+      "title": "From Classic to Contemporary",
+      "description": "Explore everything from iconic deep-dish to innovative fine dining experiences",
+      "alt": "Beautiful plated gourmet dish"
+    },
+    {
+      "id": "4",
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1200&q=80",
+      "title": "Community & Culture",
+      "description": "Each neighborhood tells a story through its unique restaurants and food traditions",
+      "alt": "Tacos and Mexican cuisine"
+    }
+  ]
+}
