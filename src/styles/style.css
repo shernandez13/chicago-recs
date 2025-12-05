@@ -1,0 +1,1305 @@
+/* ================================
+   TRYCHICAGOEATS - UNIFIED STYLESHEET
+   ================================ */
+
+/* ================================
+   CSS RESET AND GLOBAL STYLES
+   ================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================
+   CSS VARIABLES (ROOT)
+   ================================ */
+:root {
+  /* TryChicagoEats Color Palette (from design PDF) */
+  --color-primary: #FFB4B4;        /* Soft pink - main background */
+  --color-accent: #000000;         /* Black - buttons and accents */
+  --color-cream: #FFF8E8;          /* Cream/beige - footer and sections */
+  --color-text: #2d2d2d;           /* Dark gray for text */
+  --color-text-light: #7d6b7d;     /* Purple-gray for secondary text */
+  --color-background: #ffffff;     /* White background */
+  --color-background-pink: #FFB4B4; /* Pink sections */
+  --color-border: #e5e7eb;         /* Border color */
+  --color-error: #dc2626;          /* Error red */
+  --color-success: #16a34a;        /* Success green */
+
+  /* Spacing System */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Typography */
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+                      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+                      'Helvetica Neue', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Border Radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-tooltip: 1070;
+}
+
+/* ================================
+   BASE HTML AND BODY STYLES
+   ================================ */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   TYPOGRAPHY STYLES
+   ================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ================================
+   BASE ELEMENT STYLES
+   ================================ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ================================
+   ACCESSIBILITY - FOCUS STYLES
+   ================================ */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ================================
+   LAYOUT COMPONENTS
+   ================================ */
+
+/* Layout Wrapper */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+}
+
+/* ================================
+   HEADER COMPONENT
+   ================================ */
+.header {
+  background: var(--color-cream);
+  border-bottom: none;
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+.header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.header .logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.header .logoText {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1;
+}
+
+.header .tagline {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin: 0;
+  font-weight: var(--font-weight-medium);
+}
+
+.header .nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header .navList {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header .navLink {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.header .navLink:hover {
+  color: var(--color-text);
+  background-color: transparent;
+}
+
+/* Special styling for Submit Recommendation button */
+.header .navLink:last-child {
+  background-color: var(--color-accent);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+}
+
+.header .navLink:last-child:hover {
+  background-color: #333;
+  color: white;
+}
+
+.header .navLink.active:not(:last-child) {
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ================================
+   FOOTER COMPONENT
+   ================================ */
+.footer {
+  background-color: var(--color-cream);
+  border-top: none;
+  margin-top: auto;
+  padding: var(--spacing-2xl) 0 var(--spacing-xl);
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.footer .content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.footer .section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.footer .title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.footer .description {
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer .sectionTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.footer .links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer .link {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer .link:hover {
+  color: var(--color-primary);
+}
+
+.footer .text {
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+.footer .bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.footer .copyright,
+.footer .note {
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+/* ================================
+   CAROUSEL COMPONENT
+   ================================ */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  background-color: #f0f0f0;
+  box-shadow: var(--shadow-lg);
+}
+
+.carousel .slidesWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.carousel .slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.carousel .title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.carousel .description {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.carousel .control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.carousel .control:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel .control svg {
+  width: 24px;
+  height: 24px;
+}
+
+.carousel .prev {
+  left: var(--spacing-lg);
+}
+
+.carousel .next {
+  right: var(--spacing-lg);
+}
+
+.carousel .pauseButton {
+  position: absolute;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.carousel .pauseButton:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.carousel .pauseButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.carousel .dots {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-sm);
+  z-index: 10;
+}
+
+.carousel .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.carousel .dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.carousel .dot.activeDot {
+  background-color: white;
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* ================================
+   RESTAURANT CARD COMPONENT
+   ================================ */
+.restaurantCard {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.restaurantCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.restaurantCard .header {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.restaurantCard .name {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.restaurantCard .rank {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: white;
+  font-size: var(--font-size-lg);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  min-width: 50px;
+  text-align: center;
+}
+
+.restaurantCard .meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.restaurantCard .cuisine,
+.restaurantCard .price,
+.restaurantCard .rating {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+
+.restaurantCard .separator {
+  color: var(--color-text-light);
+}
+
+.restaurantCard .content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.restaurantCard .image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.restaurantCard .info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.restaurantCard .description {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.restaurantCard .details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.restaurantCard .address {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.restaurantCard .label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.restaurantCard .specialties {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.restaurantCard .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.restaurantCard .tag {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ================================
+   RESTAURANT LIST COMPONENT
+   ================================ */
+.restaurantList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.restaurantList .empty {
+  text-align: center;
+  padding: var(--spacing-3xl);
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* ================================
+   RECOMMENDATION FORM COMPONENT
+   ================================ */
+.recommendationForm {
+  width: 100%;
+  background-color: white;
+  padding: var(--spacing-2xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.recommendationForm .title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.recommendationForm .successMessage {
+  background-color: #d1fae5;
+  color: var(--color-success);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+}
+
+.recommendationForm .formGroup {
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.recommendationForm .label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.recommendationForm .input,
+.recommendationForm .textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  color: var(--color-text);
+  background-color: white;
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.recommendationForm .input:focus,
+.recommendationForm .textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.recommendationForm .input::placeholder,
+.recommendationForm .textarea::placeholder {
+  color: var(--color-text-light);
+}
+
+.recommendationForm .textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.recommendationForm .inputError {
+  border-color: var(--color-error);
+}
+
+.recommendationForm .errorText {
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.recommendationForm .submitButton {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: white;
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  margin-top: var(--spacing-md);
+}
+
+.recommendationForm .submitButton:hover:not(:disabled) {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.recommendationForm .submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.recommendationForm .submitButton:disabled {
+  background-color: var(--color-success);
+  cursor: not-allowed;
+}
+
+/* ================================
+   ABOUT PAGE
+   ================================ */
+.aboutPage {
+  width: 100%;
+}
+
+.aboutPage .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.aboutPage .hero {
+  background-color: var(--color-primary);
+  padding: var(--spacing-3xl) 0;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.aboutPage .heroTitle {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+}
+
+.aboutPage .heroSubtitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-text);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.aboutPage .carouselSection {
+  background-color: var(--color-primary);
+  padding: 0 0 var(--spacing-3xl) 0;
+}
+
+.aboutPage .whySection {
+  background-color: var(--color-primary);
+  padding: var(--spacing-3xl) 0;
+}
+
+.aboutPage .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+}
+
+.aboutPage .textColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.aboutPage .sectionTitle {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
+}
+
+.aboutPage .reasons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.aboutPage .reason {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.aboutPage .reasonTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.aboutPage .reasonText {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.aboutPage .imageColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutPage .featureImage {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  max-height: 500px;
+}
+
+/* ================================
+   TOP RESTAURANTS PAGE
+   ================================ */
+.topRestaurantsPage {
+  width: 100%;
+  min-height: calc(100vh - 200px);
+}
+
+.topRestaurantsPage .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.topRestaurantsPage .header {
+  background-color: var(--color-primary);
+  padding: var(--spacing-3xl) 0 var(--spacing-xl) 0;
+}
+
+.topRestaurantsPage .title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.topRestaurantsPage .subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.topRestaurantsPage .listSection {
+  background-color: var(--color-primary);
+  padding: var(--spacing-xl) 0 var(--spacing-3xl) 0;
+  min-height: 60vh;
+}
+
+.topRestaurantsPage .loading,
+.topRestaurantsPage .error {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-3xl);
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topRestaurantsPage .error {
+  background-color: #fee;
+  color: var(--color-error);
+}
+
+/* ================================
+   RECOMMEND FORM PAGE
+   ================================ */
+.recommendFormPage {
+  width: 100%;
+}
+
+.recommendFormPage .hero {
+  position: relative;
+  height: 400px;
+  background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recommendFormPage .heroOverlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: var(--spacing-xl);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: var(--border-radius-lg);
+  max-width: 800px;
+  width: 90%;
+}
+
+.recommendFormPage .heroTitle {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-md);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.recommendFormPage .heroSubtitle {
+  font-size: var(--font-size-xl);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.recommendFormPage .formSection {
+  background-color: var(--color-primary);
+  padding: var(--spacing-3xl) 0;
+  min-height: 500px;
+}
+
+.recommendFormPage .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ================================
+   UTILITY CLASSES
+   ================================ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ================================
+   ANIMATIONS
+   ================================ */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* ================================
+   RESPONSIVE STYLES - MOBILE
+   ================================ */
+@media (max-width: 768px) {
+  :root {
+    --font-size-4xl: 1.875rem;
+    --font-size-3xl: 1.5rem;
+    --font-size-2xl: 1.25rem;
+  }
+
+  /* Header Mobile */
+  .header .container {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .header .logo {
+    text-align: center;
+  }
+
+  .header .logoText {
+    font-size: var(--font-size-xl);
+  }
+
+  .header .nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header .navList {
+    gap: var(--spacing-md);
+  }
+
+  .header .navLink {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  /* Footer Mobile */
+  .footer .content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .footer .bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  /* Carousel Mobile */
+  .carousel {
+    height: 350px;
+  }
+
+  .carousel .control {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel .control svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .carousel .prev {
+    left: var(--spacing-sm);
+  }
+
+  .carousel .next {
+    right: var(--spacing-sm);
+  }
+
+  .carousel .pauseButton {
+    width: 32px;
+    height: 32px;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+  }
+
+  .carousel .pauseButton svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .carousel .caption {
+    padding: var(--spacing-md);
+  }
+
+  .carousel .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .carousel .description {
+    font-size: var(--font-size-sm);
+  }
+
+  .carousel .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .carousel .dot.activeDot {
+    width: 24px;
+  }
+
+  /* Restaurant Card Mobile */
+  .restaurantCard {
+    padding: var(--spacing-md);
+  }
+
+  .restaurantCard .name {
+    font-size: var(--font-size-xl);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .restaurantCard .rank {
+    font-size: var(--font-size-base);
+    min-width: 40px;
+  }
+
+  .restaurantCard .content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .restaurantCard .image {
+    height: 200px;
+  }
+
+  .restaurantCard .meta {
+    font-size: var(--font-size-sm);
+  }
+
+  /* Form Mobile */
+  .recommendationForm {
+    padding: var(--spacing-xl);
+  }
+
+  .recommendationForm .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .recommendationForm .input,
+  .recommendationForm .textarea {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .recommendationForm .submitButton {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+
+  /* About Page Mobile */
+  .aboutPage .hero {
+    padding: var(--spacing-2xl) 0;
+    min-height: 300px;
+  }
+
+  .aboutPage .heroTitle {
+    font-size: var(--font-size-3xl);
+  }
+
+  .aboutPage .heroSubtitle {
+    font-size: var(--font-size-lg);
+  }
+
+  .aboutPage .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .aboutPage .sectionTitle {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* Top Restaurants Page Mobile */
+  .topRestaurantsPage .header {
+    padding: var(--spacing-2xl) 0 var(--spacing-lg) 0;
+  }
+
+  .topRestaurantsPage .title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .topRestaurantsPage .subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .topRestaurantsPage .loading,
+  .topRestaurantsPage .error {
+    padding: var(--spacing-xl);
+    min-height: 150px;
+  }
+
+  /* Recommend Form Page Mobile */
+  .recommendFormPage .hero {
+    height: 300px;
+  }
+
+  .recommendFormPage .heroTitle {
+    font-size: var(--font-size-2xl);
+  }
+
+  .recommendFormPage .heroSubtitle {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* ================================
+   RESPONSIVE STYLES - TABLET
+   ================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Header Tablet */
+  .header .container {
+    padding: var(--spacing-md);
+  }
+
+  .header .navList {
+    gap: var(--spacing-lg);
+  }
+
+  /* Footer Tablet */
+  .footer .content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer .section:first-child {
+    grid-column: span 2;
+  }
+
+  /* Carousel Tablet */
+  .carousel {
+    height: 420px;
+  }
+
+  /* Restaurant Card Tablet */
+  .restaurantCard .content {
+    grid-template-columns: 250px 1fr;
+  }
+
+  .restaurantCard .image {
+    height: 220px;
+  }
+
+  /* About Page Tablet */
+  .aboutPage .heroTitle {
+    font-size: var(--font-size-4xl);
+  }
+
+  .aboutPage .grid {
+    gap: var(--spacing-2xl);
+  }
+
+  /* Recommend Form Page Tablet */
+  .recommendFormPage .heroTitle {
+    font-size: var(--font-size-3xl);
+  }
+}
