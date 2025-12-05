@@ -1,0 +1,19 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.empty {
+  text-align: center;
+  padding: var(--spacing-3xl);
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.empty p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+}
