@@ -1,12 +1,12 @@
 .card {
   background-color: white;
-  border-radius: var(--border-radius-md);   /* was lg */
-  padding: var(--spacing-lg);               /* was xl */
-  margin-bottom: var(--spacing-lg);         /* was xl */
-  max-width: 850px;                          /* NEW: makes card narrower */
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-md);              /* smaller padding */
+  margin-bottom: var(--spacing-md);
+  max-width: 700px;                        /* was 850px — MUCH smaller card */
   margin-left: auto;
   margin-right: auto;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
@@ -68,17 +68,17 @@
 
 .content {
   display: grid;
-  grid-template-columns: 240px 1fr;   /* was 300px */
-  gap: var(--spacing-lg);             /* was xl */
+  grid-template-columns: 180px 1fr;       /* was 240px — big reduction */
+  gap: var(--spacing-md);                 /* was lg */
   align-items: start;
 }
 
 .image {
   width: 100%;
-  height: 200px;                       /* was 250px */
+  height: 150px;                          /* was 200px */
   object-fit: cover;
   border-radius: var(--border-radius-sm);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-xs);
 }
 
 .info {
