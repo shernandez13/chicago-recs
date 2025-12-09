@@ -65,7 +65,7 @@ const About = () => {
 
             <div className="imageColumn">
               <img
-                src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&q=80"
+                src="https://static.wixstatic.com/media/d875c5_4ec8ab0819964f91b0549b13842dfa63~mv2_d_1920_1280_s_2.jpg/v1/fill/w_975,h_650,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/d875c5_4ec8ab0819964f91b0549b13842dfa63~mv2_d_1920_1280_s_2.jpg"
                 alt="Delicious pancakes with whipped cream and fruit"
                 className="featureImage"
               />
