@@ -687,7 +687,7 @@ a:focus-visible {
   width: 100%;
   background-color: white;
   padding: var(--spacing-2xl);
-  border-radius: var(--border-radius-lg);
+  border-radius: 0;
   box-shadow: var(--shadow-md);
 }
 
@@ -889,7 +889,7 @@ a:focus-visible {
 .aboutPage .featureImage {
   width: 100%;
   height: auto;
-  border-radius: var(--border-radius-lg);
+  border-radius: 0;
   box-shadow: var(--shadow-lg);
   object-fit: cover;
   max-height: 500px;
