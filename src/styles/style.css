@@ -534,7 +534,7 @@ a:focus-visible {
    ================================ */
 .restaurantCard {
   background-color: white;
-  border-radius: var(--border-radius-lg);
+  border-radius: 0;
   padding: var(--spacing-xl);
   margin-bottom: var(--spacing-xl);
   box-shadow: var(--shadow-md);
