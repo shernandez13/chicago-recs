@@ -197,6 +197,12 @@ a:focus-visible {
   top: 0;
   z-index: var(--z-sticky);
 }
+/* Make the Top Restaurants pink header behave like normal content */
+.topRestaurantsPage .header {
+  position: static;
+  top: auto;
+  z-index: auto;
+}
 
 .header .container {
   max-width: 1200px;
