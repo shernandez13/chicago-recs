@@ -41,23 +41,23 @@ const About = () => {
 
               <div className="reasons">
                 <div className="reason">
-                  <h3 className="reasonTitle">Reason 1</h3>
+                  <h3 className="reasonTitle">Local Restaurants Preserve Community Culture</h3>
                   <p className="reasonText">
-                    Body text for whatever you'd like to expand on the main point.
+                    Local businesses reflect the character of their neighborhoods. Chicago’s family-owned restaurants often represent decades of cultural tradition, unique recipes, and personal stories. Supporting them helps keep these identities alive and prevents every neighborhood from feeling the same.
                   </p>
                 </div>
 
                 <div className="reason">
-                  <h3 className="reasonTitle">Reason 2</h3>
+                  <h3 className="reasonTitle">Supporting Local Boosts the Local Economy</h3>
                   <p className="reasonText">
-                    Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes.
+                    Every dollar spent at a local restaurant circulates back into the Chicago community. Small restaurants hire local employees, work with nearby suppliers, and help sustain the local economy. Supporting these businesses directly contributes to job growth and neighborhood stability.
                   </p>
                 </div>
 
                 <div className="reason">
-                  <h3 className="reasonTitle">Reason 3</h3>
+                  <h3 className="reasonTitle">Local Restaurants Offer Better Quality & Authenticity</h3>
                   <p className="reasonText">
-                    Body text for whatever you'd like to add more to the main point. It provides details, explanations, and context.
+                    Independent restaurants focus on craftsmanship and authenticity. Instead of mass-produced menus, they offer carefully curated dishes, personal service, and a memorable dining experience. Choosing local means enjoying food made with care and creativity.
                   </p>
                 </div>
               </div>
