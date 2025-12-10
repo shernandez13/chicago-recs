@@ -83,7 +83,7 @@ const RecommendationForm = ({ onSubmit }) => {
       {isSubmitted && (
         <div className="successMessage" role="alert">
           Thank you! Your recommendation has been submitted.
-        </div>
+        
       )}
 
       {/* Restaurant Name Field */}
